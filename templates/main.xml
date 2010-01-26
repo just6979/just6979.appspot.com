@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html
+xmlns:py="http://genshi.edgewall.org/"
+xmlns="http://www.w3.org/1999/xhtml"
+xml:lang="en"
+>
+<head>
+<title>Tinfoil - {{title}}</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" type="text/css" href="/js/yui/build/reset/reset-min.css" />
+<link rel="stylesheet" type="text/css" href="/js/yui/build/base/base-min.css" />
+<link rel="stylesheet" type="text/css" href="/js/yui/build/fonts/fonts-min.css" />
+
+<link rel="stylesheet" href="/styles/main.css" type="text/css" title="default" />
+<link py:if="page == 'journal'"
+			rel="stylesheet" href="/styles/journal.css" type="text/css" title="default"
+/>
+<style type="text/css">
+#{{page}} a {
+	color: #36c;
+	background-color: #fff;
+	border: thin dotted #36c;
+}
+</style>
+
+<script type="text/javascript" src="/js/md5.js"> </script>
+
+</head>
+<body>
+
+<div class="header">
+<h1 id="tinfoil"><a href="/">Tinfoil</a></h1>
+<p class="tagline">Now with more awesome!</p>
+</div>
+
+<div class="sidebar">
+
+<div class="menu">
+
+<ul class="themed">
+<li id="bikes"><a href="?p=bikes" title="First, humans invented the wheel, then, the two wheels">Bikes</a></li>
+<li id="books" ><a href="?p=books" title="Imagination Food">Books</a></li>
+<li id="computers"><a href="?p=computers" title="Digital Aboveground">Computers</a></li>
+<li id="games"><a href="?p=games" title="Act, React, Interact">Games</a></li>
+<!--
+<li id="golf"><a href="?p=golf" title="The World's Most Vexing Game">Golf</a></li>
+-->
+<!--
+<li id="journal"><a href="?p=journal" title="Updates">Journal</a></li>
+-->
+<li id="languages"><a href="?p=languages" title="Communication Breakdown">Languages</a></li>
+<li id="movies"><a href="?p=movies" title="Choice Visuals">Movies</a></li>
+<!--
+<li id="pictures"><a href="?p=pictures" title="Stimulate that visual cortex!">Pictures</a></li>
+-->
+<li id="snowboards"><a href="?p=snowboards" title="Surf the mountains!">Snowboards</a></li>
+</ul>
+
+<ul class="unthemed">
+<li><a href="/hg/" title="My projects">Revision Control</a></li>
+<li><a href="/wiki/" title="Write it down!">Wiki</a></li>
+<!--
+<li><a href="/dbtest/" title="First try of Python, PostgreSQL, and XML">dbTest</a></li>
+-->
+<!--
+<li><a href="/sandbox/" title="Second try of Python, PostgreSQL and XML. More dynamic, AJAX style">Sandbox</a></li>
+-->
+</ul>
+
+</div>
+
+<div class="login">
+<form py:if="not session" class="login_form" action="/main" method="get"
+onsubmit="password.value=(password.value)">
+<p>
+<input id="user_input" type="text" name="user" value="{{user}}" /><br/>
+<input id="password_input" type="password" name="password" /><br/>
+<input id="login_button" type="submit" name="op" value="Login" />
+</p>
+</form>
+<p py:if="session">
+Hello, {{user}}!<br/>
+<a id="logout_button" href="?op=logout">Logout</a>
+</p>
+</div>
+
+<ul class="icons">
+<li><a href="http://www.cherokee-project.com/" title="Powered by Cherokee Web Server"><img src="/images/apache_button.png" class="linkicon" alt="Powered by Apache httpd" /></a></li>
+<!--
+<li><a href="http://www.postgresql.org/" title="PostgreSQL Powered"><img src="/images/postgresql_powered.png" class="linkicon" alt="PostgreSQL Powered" />	</a></li>
+-->
+<li><a href="http://www.python.org/" title="Python/WSGI Powered"><img src="/images/python_powered.png" class="linkicon" alt="Python/WSGI Powered" /></a></li>
+<!--
+<li><a href="http://www.ubuntu.com/" title="Powered by Ubuntu"><img src="/images/ubuntu_logo.png" class="linkicon" alt="Powered by Ubuntu" /></a></li>
+-->
+<li><a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.1"><img src="http://www.w3.org/Icons/valid-xhtml11-blue" class="linkicon" alt="Valid XHTML 1.1" /></a></li>
+<li><a href="http://jigsaw.w3.org/css-validator/check/referer" title="Valid CSS"><img src="http://www.w3.org/Icons/valid-css-blue" class="linkicon" alt="Valid CSS" /></a></li>
+</ul>
+
+<p class="copyright">
+(C) 2001-2009<br/>
+<a href="mailto:just6979 AT gmail DOT com" title="Get in touch"><em>Justin White</em></a>
+</p>
+
+</div>
+
+<div class="content">
+
+<div class="content_title">
+<h2>{{title}}</h2>
+</div>
+{% for line in content %}
+{{line}}
+{% endfor %}
+<div class="mod_time">
+<p>
+{{page_file}} was last updated on {{mod_time}}
+</p>
+</div>
+</div>
+
+</body>
+</html>

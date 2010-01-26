@@ -1,0 +1,61 @@
+<p>
+This is my web server. It is a semi-custom built Athlon X2 dual-core machine running Ubuntu with KDE 4.2, named <em>jester</em> on the network. I also use it as my personal desktop, although it doesn't get too much direct use since I have a single core Athlon 64, <em>goose</em>, in the living room for all to use.
+</p>
+
+<h3><em>jester</em></h3>
+<ul>
+<li>AMD Athlon 64 X2 4200+, 2.2 GHz, Socket AM2</li>
+<li>Asus M2N-MX SE Plus (nForce 430) mainboard</li>
+<li>2 GB DDR2-667 PC5300 RAM</li>
+<li>Seagate Barracuda 7200.10 320GB HDD</li>
+<li>NVidia GeForce 6150SE Integrated GPU, 256 MB DDR2 shared</li>
+<li>Integrated 10/100 ethernet</li>
+<li>Integrated HDA 2.0 channel audio</li>
+</ul>
+<ul>
+<li>Ubuntu 8.10 x64</li>
+<li>KDE 4.2</li>
+<li>GCC/G++ 4.3</li>
+<li>Python 2.5, 2.6, 3.0</li>
+<li>Ruby 1.8</li>
+<li>Firefox 3</li>
+<li>GIMP 2.6</li>
+<li>Apache 2.2</li>
+<li>Samba 3</li>
+<li>OpenSSH 5</li>
+</ul>
+
+<h3><em>goose</em></h3>
+<ul>
+<li>AMD Athlon 64 3700+, 2.4 GHz, Socket 754</li>
+<li>Unknown nForce3 250 mainboard</li>
+<li>1 GB DDR-400 PC3200 RAM</li>
+<li>Maxtor 160 GB HDD</li>
+<li>ATi Radeon X1650 Pro GPU, 512 MB DDR2, AGP 8x</li>
+<li>Integrated 10/100 ethernet</li>
+<li>Integrated AC'97 audio</li>
+</ul>
+<ul>
+<li>Windows XP Pro x64</li>
+<li>Visual C++/C# 2003 Student, 2005 Express</li>
+<li>GCC/G++ 3.4 (MinGW)</li>
+<li>Python 2.5, 2.6</li>
+<li>Firefox 3</li>
+<li>GIMP 2.6</li>
+<li>Putty 0.6</li>
+</ul>
+
+<h3>Others</h3>
+<p>Old parts that aren't being used.</p>
+<ul>
+<li>AMD Athlon XP Mobile 2400+, 1.9 GHz, Socket A/462</li>
+<li>AMD Athlon, 1.2 GHz, Socket A/462</li>
+<li>AMD Duron, 600 MHz, Socket A/462</li>
+<li>AMD K6-2, 300 MHz, Super Socket 7</li>
+<li>Abit Socket A/462 mainboard</li>
+<li>Asus Super Socket 7 mainboard</li>
+<li>ATi Radeon X1050 GPU, 256 MB DDR, AGP 8x</li>
+<li>ATi Radeon 7200 GPU, 64 MB DDR, AGP 2x</li>
+<li>Various 10/100 ethernet controllers</li>
+<li>Creative Soundblaster Live Value</li>
+</ul>

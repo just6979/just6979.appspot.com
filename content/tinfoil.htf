@@ -1,0 +1,34 @@
+<h3>Welcome</h3>
+<p>
+Welcome to tinfoil, my personal web presence for fun and [I wish] profit. It's mostly hand-coded and completely awesome.
+</p>
+
+<h3>Who</h3>
+<p>Just <a href="mailto:just6979 AT yahoo DOT com">Justin</a> for now.</p>
+
+<h3>What</h3>
+<ul>
+<li>I like lists, so I've got a bunch of them about stuff I like.</li>
+<li>I also like making software, which can be found in <a href="/hg/">revision control</a>.</li>
+<li>I also like writing things down sometimes, so I've setup a <a href="/wiki/">wiki</a> (since I broke my journal module a while back).</li>
+</ul>
+
+<h3>Where</h3>
+<p>Virtually, you are <a href="/">here</a>. Physically, the server lives upstairs in my room at The Lakehouse, Beach St, Sharon, MA.</p>
+
+<h3>When</h3>
+<p>Since 2001, when I accumulated enough computers to set one aside for experimenting and such. However, this server is now also my personal desktop. If for some reason traffic ever gets high enough to need a dedicated machine, I still have enough parts to build up another machine to dedicate to the site.</p>
+
+<h3>How</h3>
+<p>
+<a href="http://httpd.apache.org/">Apache</a> delivers static content (images, stylesheets, javascripts, etc), and dispatches other requests through <a href="http://www.wsgi.org/wsgi/">WSGI</a> to some <a href="http://www.python.org/">Python</a> programs. These include the <a href="/main/">main site</a> of lists, a <a href="http://www.moinmo.in/">MoinMoin</a> <a href="/wiki/">wiki</a>, and a web interface to <a href="http://www.selenic.com/mercurial/">Mercurial</a> <a href="/hg/">revision control</a> (actually this is dispatched through plain CGI, since I haven't figrued out what seems to be an encoding issue in the WSGI flavor of hgwebdir).
+</p>
+<p>
+The main site uses the <a href="http://developer.yahoo.com/yui/">YUI</a> Reset, Base, and Fonts styles to make things look the same on many different platforms and browsers. I also have hand coded style sheets for laying out the header and menu areas.
+</p>
+<p>
+Revision control and the wiki use their own built-in styles for now.
+</p>
+
+<h3>Why</h3>
+<p>Why not?</p>
