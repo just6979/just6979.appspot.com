@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html
-xmlns:py="http://genshi.edgewall.org/"
-xmlns="http://www.w3.org/1999/xhtml"
-xml:lang="en"
->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <title>Tinfoil - {{title}}</title>
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -16,9 +11,9 @@ xml:lang="en"
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/fonts/fonts-min.css" />
 
 <link rel="stylesheet" href="/styles/main.css" type="text/css" title="default" />
-<link py:if="page == 'journal'"
-			rel="stylesheet" href="/styles/journal.css" type="text/css" title="default"
-/>
+{% ifequal page 'journal' %}
+<link rel="stylesheet" href="/styles/journal.css" type="text/css" title="default"/>
+{% endifequal %}
 <style type="text/css">
 #{{page}} a {
 	color: #36c;
@@ -26,9 +21,6 @@ xml:lang="en"
 	border: thin dotted #36c;
 }
 </style>
-
-<script type="text/javascript" src="/js/md5.js"> </script>
-
 </head>
 <body>
 
@@ -74,17 +66,13 @@ xml:lang="en"
 </div>
 
 <div class="login">
-<form py:if="not session" class="login_form" action="/main" method="get"
-onsubmit="password.value=(password.value)">
 <p>
-<input id="user_input" type="text" name="user" value="{{user}}" /><br/>
-<input id="password_input" type="password" name="password" /><br/>
-<input id="login_button" type="submit" name="op" value="Login" />
-</p>
-</form>
-<p py:if="session">
+{% if user %}
 Hello, {{user}}!<br/>
-<a id="logout_button" href="?op=logout">Logout</a>
+<a id="logout_button" href="/logout">Logout</a>
+{% else %}
+<a id="login_button" href="/login">Login</a>
+{% endif %}
 </p>
 </div>
 
