@@ -33,6 +33,7 @@ img {
 	padding: 1em 1em;
 	height: 3em;
 	position: relative;
+	border-bottom: solid thin;
 }
 
 #tinfoil {
@@ -59,9 +60,9 @@ img {
 	border-bottom: thin solid;
 	background-color: #eee;
 	position: absolute;
-	width: 8em;
+	width: 10em;
 	z-index: 2;
-	text-align: right;
+	text-align: center;
 	font-family: sans-serif;
 	padding: 0 1em;
 }
@@ -80,53 +81,45 @@ img {
 	margin-top: .1em;
 }
 
-.unthemed {
-	font-style: italic;
-	font-weight: bold;
-}
-
-.themed {
-	font-weight: bold;
-}
-
 .login {
-	text-align: center;
-	border-top: thin solid;
 	padding-top: 0.75em;
-	margin-top: 1em;
+	margin-bottom: 1em;
 	border-bottom: thin solid;
 }
 
-#user_input {
-	width: 100%;
+.themed {
+	text-align: right;
+	font-weight: bold;
 }
 
-#password_input {
-	width: 100%;
+.unthemed {
+	text-align: right;
+	font-style: italic;
+	padding-bottom: 1em;
+	border-bottom: thin solid;
 }
 
 .icons {
-	text-align: center;
 	width: 100%;
-	padding: 0.25em 0 0.5em;
+	padding: 0.5em 0 0.5em;
 	border-bottom: thin solid;
 }
 
 .copyright {
 	text-align: center;
 	text-decoration: none;
+	padding-top: 0.5em;
 }
 
 .content {
-	border-top: thin solid;
 	margin: 0;
 	color: #000;
 	background-color: #fff;
 	position: absolute;
-	left: 10em;
+	left: 12em;
 	font-family: serif;
 	text-align: justify;
-	padding: 1em;
+	padding: 1em 2em;
 }
 
 .content p {

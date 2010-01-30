@@ -13,18 +13,18 @@ Note: Revision Control is down since I moved the main site to App Engine. It may
 <h3>What</h3>
 <ul>
 <li>I like lists, so I've got a bunch of them about stuff I like.</li>
-<li>I also like making software, which can be found in <a href="/hg/">revision control</a>.</li>
+<li>I also like making software, which can be found in <a href="/hg">revision control</a>.</li>
 </ul>
 
 <h3>Where</h3>
 <p>In the cloud! Ported to WSGI via Apache from mod_python a while back, then to WSGI via Cherokee, now moved (mostly) to the Google App Engine.</p>
 
 <h3>When</h3>
-<p>Since 2001, when I accumulated enough computers to set one aside for experimenting and such. However, this server is now also my personal desktop. If for some reason traffic ever gets high enough to need a dedicated machine, I still have enough parts to build up another machine to dedicate to the site. Or until I move the whole get-up into the cloud via App Engine.</p>
+<p>Since 2001, when I accumulated enough computers to set one aside for experimenting and such. However, this server is now also my personal desktop. If for some reason traffic ever gets high enough to need a dedicated machine, I still have enough parts to build up another machine to dedicate to the site. Or until I move the whole get-up into the cloud via App Engine. Which is in progress and mostly done. At least, it's mostly done as far as what worked immediately before. Journal and pictures were broken, and although the journal should be easy to fix with App Engine's users module, pictures might take a bit.</p>
 
 <h3>How</h3>
 <p>
-<a href="http://code.google.com/appengine/">Google App Engine</a> delivers static content (images, stylesheets, javascripts, etc), and dispatches other requests through <a href="http://www.wsgi.org/wsgi/">WSGI</a> to some <a href="http://www.python.org/">Python</a> programs. These include the <a href="/main/">main site</a> of lists, a <a href="http://www.moinmo.in/">MoinMoin</a> <a href="/wiki/">wiki</a>, and a web interface to <a href="http://www.selenic.com/mercurial/">Mercurial</a> <a href="/hg/">revision control</a>.
+<a href="http://code.google.com/appengine/">Google App Engine</a> delivers static content (images, stylesheets, javascripts, etc), and dispatches other requests through <a href="http://www.wsgi.org/wsgi/">WSGI</a> to some <a href="http://www.python.org/">Python</a> programs. These include the <a href="/main/">main site</a> of lists and a web interface to <a href="http://www.selenic.com/mercurial/">Mercurial</a> <a href="/hg/">revision control</a>.
 </p>
 <p>
 The main site uses the <a href="http://developer.yahoo.com/yui/">YUI</a> Reset, Base, and Fonts styles to make things look the same on many different platforms and browsers. I also have hand coded style sheets for laying out the header and menu areas.

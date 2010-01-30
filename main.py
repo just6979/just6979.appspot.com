@@ -121,11 +121,16 @@ class LogoutPage(webapp.RequestHandler):
 	def get(self):
 		self.redirect(users.create_logout_url(self.request.referrer))
 
+class MercurialPage(webapp.RequestHandler):
+	def get(self):
+		self.redirect('http://just6979.hg.sourceforge.net/hgweb/just6979/just6979/')
+
 
 application = webapp.WSGIApplication([
 	('/', MainPage),
 	('/login', LoginPage),
 	('/logout', LogoutPage),
+	('/hg', MercurialPage),
 ], debug=True)
 
 

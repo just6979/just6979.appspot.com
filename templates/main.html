@@ -31,6 +31,19 @@
 
 <div class="sidebar">
 
+<div class="login">
+<p>
+{% if user %}
+Hello<br/>
+{{user}}!<br/>
+</p><p>
+<a id="logout_button" href="/logout">Logout</a>
+{% else %}
+<a id="login_button" href="/login">Login</a>
+{% endif %}
+</p>
+</div>
+
 <div class="menu">
 
 <ul class="themed">
@@ -53,7 +66,7 @@
 </ul>
 
 <ul class="unthemed">
-<li><a href="http://just6979.hg.sourceforge.net/hgweb/just6979/just6979/" title="My projects">Revision Control</a></li>
+<li><a href="/hg" title="My projects">Revision Control</a></li>
 <!--<li><a href="/wiki/" title="Write it down!">Wiki</a></li>-->
 <!--
 <li><a href="/dbtest/" title="First try of Python, PostgreSQL, and XML">dbTest</a></li>
@@ -65,32 +78,14 @@
 
 </div>
 
-<div class="login">
-<p>
-{% if user %}
-Hello, {{user}}!<br/>
-<a id="logout_button" href="/logout">Logout</a>
-{% else %}
-<a id="login_button" href="/login">Login</a>
-{% endif %}
-</p>
-</div>
-
 <ul class="icons">
-<li><a href="http://www.cherokee-project.com/" title="Powered by Cherokee Web Server"><img src="/images/apache_button.png" class="linkicon" alt="Powered by Apache httpd" /></a></li>
-<!--
-<li><a href="http://www.postgresql.org/" title="PostgreSQL Powered"><img src="/images/postgresql_powered.png" class="linkicon" alt="PostgreSQL Powered" />	</a></li>
--->
 <li><a href="http://www.python.org/" title="Python/WSGI Powered"><img src="/images/python_powered.png" class="linkicon" alt="Python/WSGI Powered" /></a></li>
-<!--
-<li><a href="http://www.ubuntu.com/" title="Powered by Ubuntu"><img src="/images/ubuntu_logo.png" class="linkicon" alt="Powered by Ubuntu" /></a></li>
--->
 <li><a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.1"><img src="http://www.w3.org/Icons/valid-xhtml11-blue" class="linkicon" alt="Valid XHTML 1.1" /></a></li>
 <li><a href="http://jigsaw.w3.org/css-validator/check/referer" title="Valid CSS"><img src="http://www.w3.org/Icons/valid-css-blue" class="linkicon" alt="Valid CSS" /></a></li>
 </ul>
 
 <p class="copyright">
-(C) 2001-2009<br/>
+(C) 2001-2010<br/>
 <a href="mailto:just6979 AT gmail DOT com" title="Get in touch"><em>Justin White</em></a>
 </p>
 
