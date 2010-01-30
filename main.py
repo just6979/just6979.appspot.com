@@ -31,7 +31,7 @@ class MainPage(webapp.RequestHandler):
 
 
 base_dir = os.path.dirname(__file__)
-template_dir = os.path.join(base_dir)
+template_dir = os.path.join(base_dir, 'templates')
 content_dir = os.path.join(base_dir, 'content')
 
 # datestamp for HTTP headers: LastModified, Expires
