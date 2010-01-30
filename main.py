@@ -33,8 +33,7 @@ class MainPage(webapp.RequestHandler):
 		cookie_date_stamp = '%a, %d-%b-%Y %H:%M:%S GMT'
 
 		user = users.get_current_user()
-		if not user:
-			user = ''
+		admin = users.is_current_user_admin()
 
 		now = time.time()
 		res.headers['Expires'] = time.strftime(http_date_stamp, time.gmtime(now))
@@ -99,6 +98,7 @@ class MainPage(webapp.RequestHandler):
 		values = {
 			'title': title,
 			'user': user,
+			'admin': admin,
 			'page': page,
 			'content': content,
 			'page_file': os.path.basename(page_file),
@@ -110,11 +110,7 @@ class MainPage(webapp.RequestHandler):
 
 class LoginPage(webapp.RequestHandler):
 	def get(self):
-		user = users.get_current_user()
-		if user:
-			self.redirect(self.request.uri)
-		else:
-			self.redirect(users.create_login_url(self.request.referrer))
+		self.redirect(users.create_login_url(self.request.referrer))
 
 
 class LogoutPage(webapp.RequestHandler):

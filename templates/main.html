@@ -34,9 +34,11 @@
 <div class="login">
 <p>
 {% if user %}
-Hello<br/>
-{{user}}!<br/>
-</p><p>
+{{user}}
+{% if admin %}
+<br/>Administrator
+{% endif %}
+<br/>
 <a id="logout_button" href="/logout">Logout</a>
 {% else %}
 <a id="login_button" href="/login">Login</a>
