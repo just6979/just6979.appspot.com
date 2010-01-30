@@ -168,7 +168,7 @@ def page_handler(environ):
 	headers.append(('LastModified', pretty_mod_time))
 
 	# load the template
-	template_file = 'main.xml'
+	template_file = 'main.html'
 	path = os.path.join(template_dir, template_file)
 	values = {
 		'title': title,

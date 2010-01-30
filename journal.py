@@ -23,7 +23,7 @@ class Journal:
 			s.user = user_cookie.value
 		if session_cookie:
 			s.session = session_cookie.value
-		s.template = loader.load("journal.xml")
+		s.template = loader.load("journal.html")
 		s.output = []
 
 	def dispatch(s):
