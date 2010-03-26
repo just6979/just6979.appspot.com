@@ -56,13 +56,12 @@ class MainPage(webapp.RequestHandler):
 			else:
 				pass
 		else:
-			page = form.getfirst('p', 'tinfoil')
+			page = form.getfirst('p', 'home')
 			if page == 'journal':
 				page_file = os.path.join(base_dir, 'journal.py')
 				j = journal.Journal(
 					form,
-					user,
-					templateLoader
+					user
 				)
 				content = j.dispatch()
 			else:
@@ -72,7 +71,7 @@ class MainPage(webapp.RequestHandler):
 					content = file(page_file, 'r')
 				# if not, use tinfoil.htf. if it's not there we got bigger probs
 				except IOError:
-					page = 'tinfoil'
+					page = 'home'
 					page_file = os.path.join(content_dir, page + '.htf')
 					content = file(page_file, 'r')
 			title = page.capitalize()
