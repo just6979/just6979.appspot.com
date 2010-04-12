@@ -54,14 +54,34 @@
 
 {% if admin %}
 <p class="edit_controls">
+{% if not edit%}
 <a href="?op=edit;p={{page}}">Edit</a>
+{% else %}
+<a href="?p={{page}}">Cancel Edit</a>
+{% endif %}
 </p>
 {% endif %}
-
 <h2 class="content_title">{{title}}</h2>
 
+{% if edit %}
+<form id="edit_form" action="/main" method="post">
+<input type="hidden" name="id" value="{{id}}" />
+<textarea id="data_input" name="data" rows="20" cols="100">
 {% for line in content %}
-{{line}}
+	{{line}}
+{% endfor %}
+</textarea>
+<br/>
+<input type="submit" name="op" value="Preview" />
+<input type="reset" value="Reset" />
+{% if preview %}
+<input type="submit" name="op" value="Update" />
+{% endif %}
+</form>
+{% endif %}
+
+{% for line in content %}
+	{{line}}
 {% endfor %}
 
 </div>

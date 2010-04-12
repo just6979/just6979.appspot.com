@@ -67,13 +67,14 @@ img {
 	font-style: italic;
 }
 .edit_controls {
-	text-indent: 0em;
+	text-align: right;
 }
 .content_title h2 {
 	padding: 0;
 	margin: 0 0 1em;
 	border-bottom: solid 1px;
 }
+
 .content {
 	margin: 0 1em;
 	color: #000;
