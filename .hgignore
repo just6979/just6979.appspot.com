@@ -1,4 +1,3 @@
-syntax: glob
-*.pyc
-_*
-
+glob:*.pyc
+glob:_multiprocessing.*
+glob:just6979.geany
