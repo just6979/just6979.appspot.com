@@ -47,7 +47,7 @@ class MainPage(webapp.RequestHandler):
 
 			title = page.capitalize()
 
-			path = 'templates/main.html'
+			path = 'html/main.html'
 			values = {
 				'title': title,
 				'page': page,

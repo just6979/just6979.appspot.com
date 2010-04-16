@@ -5,8 +5,11 @@ runtime: python
 api_version: 1
 
 handlers:
-- url: /styles
-  static_dir: styles
+- url: /css
+  static_dir: css
+
+- url: /js
+  static_dir: js
 
 - url: /images
   static_dir: images
