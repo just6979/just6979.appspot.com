@@ -20,13 +20,14 @@ Welcome to tinfoil, my personal web presence for fun and [I wish] profit. It's m
 
 <h3>How</h3>
 <p>
-<a href="http://code.google.com/appengine/">Google App Engine</a> delivers static content (images, stylesheets, javascripts, etc), and dispatches other requests through <a href="http://www.wsgi.org/wsgi/">WSGI</a> to some <a href="http://www.python.org/">Python</a> programs. These include the <a href="/main/">main site</a> of lists and a <a href="/hg">web interface<a/> (via <a href="http://bitbucket.org"/>BitBucket</a>) to a <a href="http://www.selenic.com/mercurial/">Mercurial</a> revision control <a href="http://bitbucket.org/just6979/just6979">repository</a>.
+<a href="http://code.google.com/appengine/">Google App Engine</a> delivers static content (images, stylesheets, javascripts, etc), and dispatches requests through <a href="http://www.wsgi.org/wsgi/">WSGI</a> to some <a href="http://www.python.org/">Python</a> programs.
 </p>
 <p>
-The main site uses the <a href="http://developer.yahoo.com/yui/">YUI</a> Reset, Base, and Fonts styles to make things look the same on many different platforms and browsers. I also have hand coded style sheets for laying out the header and menu areas.
+The main site uses the <a href="http://developer.yahoo.com/yui/">YUI</a> Reset, Base, and Fonts styles to make things look the same on many different platforms and browsers. I also have hand-coded stylesheets for laying out the header and menu areas.
 </p>
+
 <p>
-Revision control and the wiki use their own built-in styles for now.
+<a href="http://jquery.com/">jQuery</a> handles manipulating the documents dynamically and smoothly. Hiding/showing the edit form for example.
 </p>
 
 <h3>Why</h3>

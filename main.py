@@ -15,50 +15,67 @@ from google.appengine.ext.webapp import template
 from google.appengine.ext.webapp.util import run_wsgi_app
 
 class Page(db.Model):
+	datetime = db.DateTimeProperty(required=True)
 	title = db.StringProperty(required=True)
 	author = db.UserProperty(required=True)
-	type = db.StringProperty(required=True)
 	content = db.TextProperty(required=True)
+	tags = db.StringProperty()
 
-class MainPage(webapp.RequestHandler):
-	def get(self):
+class SinglePage(webapp.RequestHandler):
+	def get(self, page):
 		user = users.get_current_user()
 		admin = users.is_current_user_admin()
 
-		form = cgi.FieldStorage(environ=self.request.environ)
+		content_dir = 'content'
+		try:
+			page_file = os.path.join(content_dir, page + '.htf')
+			content = file(page_file, 'r')
+		except IOError:
+			page = 'home'
+			page_file = os.path.join(content_dir, page + '.htf')
+			content = file(page_file, 'r')
 
-		op = form.getfirst('op', 'display').lower()
+		title = page.capitalize()
 
-		edit = ''
-		if op == 'edit':
-			edit = 'edit'
-			op = 'display'
+		path = 'html/main.html'
+		values = {
+			'title': title,
+			'page': page,
+			'content': content.readlines(),
+			'user': user,
+			'admin': admin,
+			'datetime': None,
+		}
 
-		if op == 'display':
-			page = form.getfirst('p', 'home')
-			content_dir = 'content'
-			try:
-				page_file = os.path.join(content_dir, page + '.htf')
-				content = file(page_file, 'r')
-			except IOError:
-				page = 'home'
-				page_file = os.path.join(content_dir, page + '.htf')
-				content = file(page_file, 'r')
+		self.response.out.write(template.render(path, values))
 
-			title = page.capitalize()
+class EditForm(webapp.RequestHandler):
+	def get(self, page):
+		user = users.get_current_user()
+		admin = users.is_current_user_admin()
 
-			path = 'html/main.html'
-			values = {
-				'title': title,
-				'page': page,
-				'content': content.readlines(),
-				'user': user,
-				'admin': admin,
-				'edit': edit,
-				'datetime': None,
-			}
+		content_dir = 'content'
+		try:
+			page_file = os.path.join(content_dir, page.lower() + '.htf')
+			content = file(page_file, 'r')
+		except IOError:
+			page = 'home'
+			page_file = os.path.join(content_dir, page.lower() + '.htf')
+			content = file(page_file, 'r')
+		
+		title = page.capitalize()
 
-			self.response.out.write(template.render(path, values))
+		path = 'html/edit_form.html'
+		values = {
+			'title': title,
+			'page': page,
+			'content': content.readlines(),
+			'user': user,
+			'admin': admin,
+			'datetime': None,
+		}
+
+		self.response.out.write(template.render(path, values))
 
 class LoginPage(webapp.RequestHandler):
 	def get(self):
@@ -68,12 +85,18 @@ class LogoutPage(webapp.RequestHandler):
 	def get(self):
 		self.redirect(users.create_logout_url(self.request.referrer))
 
+class MainPage(webapp.RequestHandler):
+	def get(self):
+		self.redirect('/page/home')
+
 class MercurialPage(webapp.RequestHandler):
 	def get(self):
 		self.redirect('http://bitbucket.org/just6979/just6979')
 
 application = webapp.WSGIApplication([
 	('/', MainPage),
+	(r'/page/(.*)', SinglePage),
+	(r'/edit/(.*)', EditForm),
 	('/login', LoginPage),
 	('/logout', LogoutPage),
 	('/hg', MercurialPage),
