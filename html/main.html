@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <title>just6979 - {{title}}</title>
+
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
@@ -18,6 +19,10 @@
 	border: thin dotted #36c;
 }
 </style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
 </head>
 <body>
 
@@ -54,16 +59,11 @@
 
 {% if admin %}
 <p class="edit_controls">
-{% if not edit%}
-<a href="?op=edit;p={{page}}">Edit</a>
-{% else %}
-<a href="?p={{page}}">Cancel Edit</a>
-{% endif %}
+<a id="edit_button" href="">Edit</a>
 </p>
 {% endif %}
 <h2 class="content_title">{{title}}</h2>
 
-{% if edit %}
 <form id="edit_form" action="/main" method="post">
 <input type="hidden" name="id" value="{{id}}" />
 <textarea id="data_input" name="data" rows="20" cols="100">
@@ -78,7 +78,6 @@
 <input type="submit" name="op" value="Update" />
 {% endif %}
 </form>
-{% endif %}
 
 {% for line in content %}
 	{{line}}
