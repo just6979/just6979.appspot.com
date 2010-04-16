@@ -70,7 +70,7 @@ class LogoutPage(webapp.RequestHandler):
 
 class MercurialPage(webapp.RequestHandler):
 	def get(self):
-		self.redirect('http://just6979.hg.sourceforge.net/hgweb/just6979/just6979/')
+		self.redirect('http://bitbucket.org/just6979/just6979')
 
 application = webapp.WSGIApplication([
 	('/', MainPage),
