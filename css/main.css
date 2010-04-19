@@ -20,10 +20,7 @@ a:hover {
 img {
 	border: 0;
 }
-.dump {
-	padding: 1em;
-}
-.header {
+#header {
 	margin: 0;
 	padding-top: 1em;
 	text-align: center;
@@ -36,46 +33,46 @@ img {
 	text-decoration: none;
 	padding: 0 0.25em;
 }
-.tagline {
+#tagline {
 	font-size: 125%;
 	display: inline;
 }
-.menu {
+#menu {
 	margin: 0;
 	font-weight: bold;
 	font-size: 125%;
 }
-.menu li {
+#menu li {
 	display: inline;
 }
 .unthemed {
 	font-weight: normal;
 }
-.user_controls {
+#user_controls {
 	margin: 0.5em;
 	padding: 0.5em;
 	border-top: solid thin;
 }
-.user_controls li {
+#user_controls li {
 	display: inline;
 }
-.user {
+#user {
 	font-weight: bold;
 }
-.user_class {
+#user_class {
 	font-size: 75%;
 	font-style: italic;
 }
-.edit_controls {
+#edit_controls {
 	text-align: right;
 }
-.content_title h2 {
+#content_title {
 	padding: 0;
 	margin: 0 0 1em;
 	border-bottom: solid 1px;
 }
 
-.content {
+#content {
 	margin: 0 1em;
 	color: #000;
 	background-color: #fff;
@@ -83,25 +80,38 @@ img {
 	padding: 1em 1em;
 	border: solid thin;
 }
-.content p {
+#content p {
 	text-indent: 1.5em;
 }
-.mod_time {
+#mod_time {
 	text-indent: 2em;
 	font-style: italic;
 	font-size: 85%;
 }
-.footer {
+#footer {
 	text-align: center;
 }
-.footer li {
+#footer li {
 	display: inline;
 }
-.copyright {
+#copyright {
 	text-align: center;
 	padding-bottom: 1em;
 }
-
 #edit_form {
+	display: none;
+	background-color: #eee;
+	padding: 1em;
+	border: solid thin;
+	margin-bottom: 1em;
+}
+#edit_form p {
+	text-indent: 0;
+}
+#page_data {
+	width: 100%;
+}
+
+#update_button {
 	display: none;
 }

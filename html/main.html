@@ -26,26 +26,26 @@
 </head>
 <body>
 
-<div class="header">
+<div id="header">
 <h1 id="home"><a href="/">just6979</a></h1>
-<p class="tagline">Now with more awesome!</p>
+<p id="tagline">Now with more awesome!</p>
 
-<ul class="menu">
-<li id="bikes"><a href="?p=bikes" title="First, humans invented the wheel, then, the two wheels">Bikes</a></li>
-<li id="books" ><a href="?p=books" title="Imagination Food">Books</a></li>
-<li id="computers"><a href="?p=computers" title="Digital Aboveground">Computers</a></li>
-<li id="games"><a href="?p=games" title="Act, React, Interact">Games</a></li>
-<li id="languages"><a href="?p=languages" title="Communication Breakdown">Languages</a></li>
-<li id="movies"><a href="?p=movies" title="Choice Visuals">Movies</a></li>
-<li id="snowboards"><a href="?p=snowboards" title="Surf the mountains!">Snowboards</a></li>
-<li class="unthemed"><a href="/hg" title="My projects">Revision Control</a></li>
+<ul id="menu">
+<li id="bikes"><a href="/page/bikes" title="First, humans invented the wheel, then, the two wheels">Bikes</a></li>
+<li id="books" ><a href="/page/books" title="Imagination Food">Books</a></li>
+<li id="computers"><a href="/page/computers" title="Digital Aboveground">Computers</a></li>
+<li id="games"><a href="/page/games" title="Act, React, Interact">Games</a></li>
+<li id="languages"><a href="/page/languages" title="Communication Breakdown">Languages</a></li>
+<li id="movies"><a href="/page/movies" title="Choice Visuals">Movies</a></li>
+<li id="snowboards"><a href="/page/snowboards" title="Surf the mountains!">Snowboards</a></li>
+<li class="unthemed"><a href="/hg" title="Source Code">Revision Control</a></li>
 </ul>
 
-<ul class="user_controls">
+<ul id="user_controls">
 {% if user %}
-	<li class="user">{{user}}</li>
+	<li id="user">{{user}}</li>
 	{% if admin %}
-		<li class="user_class">(Administrator)</li>
+		<li id="user_class">(Administrator)</li>
 	{% endif %}
 	<li><a id="logout_button" href="/logout">Logout</a></li>
 {% else %}
@@ -55,37 +55,48 @@
 
 </div>
 
-<div class="content">
+<div id="content">
 
 {% if admin %}
-<p class="edit_controls">
-<a id="edit_button" href="/edit/{{page}}">Edit</a>
+<p id="edit_controls">
+<a id="edit_button" href="/data/{{page}}">Edit</a>
 </p>
 {% endif %}
 
-<h2 class="content_title">{{title}}</h2>
+<h2 id="content_title">{{title}}</h2>
 
 <form id="edit_form">
+<p>
+<input id="page_title" type="hidden" name="page" value="{{title}}" />
+<input id="preview_button" type="button" value="Preview" />
+<input id="reset_button" type="button" value="Reset" />
+<input id="cancel_button" type="button" value="Cancel" />
+</p>
+<p><textarea id="page_data" name="data" rows="30" cols="100">
+</textarea>
+</p>
+<p><input id="update_button" type="submit" value="Update" />
+</p>
 </form>
 
-{% for line in content %}
-	{{line}}
-{% endfor %}
+<div id="entry">
+{% for line in content %}{{line}}{% endfor %}
+</div>
 
 </div>
 
-<p class="mod_time">
+<p id="mod_time">
 {{page_file}} was last updated on {{mod_time}}
 </p>
 
-<ul class="footer">
+<ul id="footer">
 <li><a href="http://www.python.org/" title="Python/WSGI Powered"><img src="http://www.python.org/community/logos/python-powered-w-70x28.png" class="linkicon" alt="Python/WSGI Powered" /></a></li>
 <li><a href="http://appengine.google.com/"><img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" alt="Powered by Google App Engine" /></a></li>
 <li><a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.1"><img src="http://www.w3.org/Icons/valid-xhtml11-blue" class="linkicon" alt="Valid XHTML 1.1" /></a></li>
 <li><a href="http://jigsaw.w3.org/css-validator/check/referer" title="Valid CSS"><img src="http://www.w3.org/Icons/valid-css-blue" class="linkicon" alt="Valid CSS" /></a></li>
 </ul>
 
-<p class="copyright">
+<p id="copyright">
 (C) 2001-2010 <a href="mailto:just6979 AT gmail DOT com" title="Get in touch">Justin White</a>
 </p>
 

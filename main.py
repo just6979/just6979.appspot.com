@@ -21,19 +21,26 @@ class Page(db.Model):
 	content = db.TextProperty(required=True)
 	tags = db.StringProperty()
 
+def getPageData(page):
+		content_dir = 'content'
+		try:
+			page_file = os.path.join(content_dir, page.lower() + '.htf')
+			data = file(page_file, 'r')
+		except IOError:
+			page = 'home'
+			page_file = os.path.join(content_dir, page.lower() + '.htf')
+			data = file(page_file, 'r')
+
+		content = ''
+		for line in data:
+			content += line
+
+		return content
+
 class SinglePage(webapp.RequestHandler):
 	def get(self, page):
 		user = users.get_current_user()
 		admin = users.is_current_user_admin()
-
-		content_dir = 'content'
-		try:
-			page_file = os.path.join(content_dir, page + '.htf')
-			content = file(page_file, 'r')
-		except IOError:
-			page = 'home'
-			page_file = os.path.join(content_dir, page + '.htf')
-			content = file(page_file, 'r')
 
 		title = page.capitalize()
 
@@ -41,41 +48,16 @@ class SinglePage(webapp.RequestHandler):
 		values = {
 			'title': title,
 			'page': page,
-			'content': content.readlines(),
+			'content': getPageData(page),
 			'user': user,
 			'admin': admin,
-			'datetime': None,
 		}
 
 		self.response.out.write(template.render(path, values))
 
-class EditForm(webapp.RequestHandler):
-	def get(self, page):
-		user = users.get_current_user()
-		admin = users.is_current_user_admin()
-
-		content_dir = 'content'
-		try:
-			page_file = os.path.join(content_dir, page.lower() + '.htf')
-			content = file(page_file, 'r')
-		except IOError:
-			page = 'home'
-			page_file = os.path.join(content_dir, page.lower() + '.htf')
-			content = file(page_file, 'r')
-		
-		title = page.capitalize()
-
-		path = 'html/edit_form.html'
-		values = {
-			'title': title,
-			'page': page,
-			'content': content.readlines(),
-			'user': user,
-			'admin': admin,
-			'datetime': None,
-		}
-
-		self.response.out.write(template.render(path, values))
+class UpdatePage(webapp.RequestHandler):
+	def post(self, page, form):
+		pass
 
 class LoginPage(webapp.RequestHandler):
 	def get(self):
@@ -96,7 +78,7 @@ class MercurialPage(webapp.RequestHandler):
 application = webapp.WSGIApplication([
 	('/', MainPage),
 	(r'/page/(.*)', SinglePage),
-	(r'/edit/(.*)', EditForm),
+	(r'/update/(.*)', UpdatePage),
 	('/login', LoginPage),
 	('/logout', LogoutPage),
 	('/hg', MercurialPage),
