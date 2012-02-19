@@ -1,3 +1,8 @@
+<h3>Note</h3>
+<p>
+This site is currently undergoing some changes. Between the time I last worked on it and the present, Google App Engine has received a number of important changes that I need to consider as as work on the site progresses. Luckily, the entire site (backend & frontend code, markup templates, styles, and content) has been under revision control since the beginning. I'll be making new changes and merging back changes from previous revisions, but the end result will look better, perform better, and not cost much to run.
+</p>
+
 <h3>Welcome</h3>
 <p>
 Welcome to tinfoil, my personal web presence for fun and [I wish] profit. It's mostly hand-coded and completely awesome.
