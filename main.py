@@ -76,7 +76,7 @@ class MercurialPage(webapp.RequestHandler):
         self.redirect('http://bitbucket.org/just6979/just6979')
 
 
-application = webapp.WSGIApplication([
+app = webapp.WSGIApplication([
     ('/', MainPage),
     (r'/page/(.*)', SinglePage),
     (r'/update/(.*)', UpdatePage),
@@ -84,5 +84,3 @@ application = webapp.WSGIApplication([
     ('/logout', LogoutPage),
     ('/hg', MercurialPage),
 ], debug=True)
-
-app = webapp2.WSGIApplication([('/', MainPage)])
