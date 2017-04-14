@@ -80,7 +80,7 @@
 </form>
 
 <div id="entry">
-{% for line in content %}{{line}}{% endfor %}
+{% for line in content %}{{line|safe}}{% endfor %}
 </div>
 
 </div>
