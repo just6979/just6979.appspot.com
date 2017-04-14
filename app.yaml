@@ -1,8 +1,9 @@
 application: just6979
 version: 4
 
-runtime: python
+runtime: python27
 api_version: 1
+threadsafe: yes
 
 handlers:
 - url: /css
@@ -15,4 +16,4 @@ handlers:
   static_dir: images
 
 - url: /.*
-  script: main.py
+  script: main.app
