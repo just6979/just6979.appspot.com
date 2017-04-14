@@ -4,3 +4,5 @@
 appengine-generated/
 
 /.idea/libraries/
+/.idea/workspace.xml
+*.pyc
