@@ -1,5 +1,5 @@
-application: just6979
-version: 4
+application: just6979-hrd
+version: 5
 
 runtime: python27
 api_version: 1
